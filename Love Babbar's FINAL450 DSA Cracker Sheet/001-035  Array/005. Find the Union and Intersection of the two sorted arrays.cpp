@@ -1,24 +1,17 @@
-// a = [1,2,3,4,5]
-// b = [1,2,3]
-// union = list(set(a+b))
-// intersection = list(filter(lambda x: x in a, b))
-// print (union)
-// print (intersection)
-
 #include <bits/stdc++.h>
 using namespace std;
 
 int main(){
-      int a[] = {1,2,3,4,5};
-      int b[] = {1,2,3};
+     int n,m; cin>>n>>m;
+     int a[n], b[m];
+     for (int i=0; i<n; i++) cin>>a[i];
+     for (int i=0; i<m; i++) cin>>b[i];
 
-      int l1 = sizeof(a)/sizeof(a[0]), l2 = sizeof(a)/sizeof(a[0]);
-      int L = (l1 > l2 ? l1 : l2);
-
-      int c[L];
-      sort(a, a+l1); sort(b, b+l2);
-
-      for(int i=0; i<L; i++){
-            
-      }
+     int Union[m+n], Inter[(m>n)?n:m];
+     for (int i=0; i<n; i++){
+          for (int j=0; j<m; j++){
+               if (a[i]==b[j]) Inter[i]=a[i];
+               if (a[i] != b[j]) Union[];
+          }
+     }
 }
