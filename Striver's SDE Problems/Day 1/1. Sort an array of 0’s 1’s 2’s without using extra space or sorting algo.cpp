@@ -10,4 +10,6 @@ int main(){
             if(a[m] == 1) m++;
             if(a[m] == 2) swap(a[h--], a[m++]);
       }
+      for(int i=0; i<n; i++) cout<<a[i]<<" ";
+      return 0;
 }
