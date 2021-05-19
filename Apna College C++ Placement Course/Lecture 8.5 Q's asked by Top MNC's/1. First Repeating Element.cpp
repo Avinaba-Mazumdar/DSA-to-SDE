@@ -4,19 +4,23 @@ using namespace std;
 //AMAZON, ORACLE
 
 int main(){
-      int n; cin>>n;
-      int a[n]; for(int i=0; i<n; i++) cin>>a[i];
+      int n, N; cin>>n;
+      int a[n]; for(int i=0; i<n; i++){
+            cin>>a[i];
+            N = max(N, a[i]);
+      }
+      
+      int b[N]; for(int i=0; i<N; i++) b[i] = -1;
 
-      int N = INT_MAX;
-      int b[N]; for(int i=0; i<n; i++) b[i] = -1;
-
-      int mn = 8585;
+      int mn = INT_MAX;
 
       for(int i=0; i<n; i++){
-            if (b[a[i]] == -1) mn = max(mn, b[a[i]]);
-            else b[a[i]] = i;
-            cout<<mn<<endl;
+            if(b[a[i]] != -1) mn = min(mn, b[a[i]]);
+            else{
+                  b[a[i]] = i;
+            }
       }
-      cout<<mn<<endl;
+      if(mn == INT_MAX) cout<<-1<<endl;
+      else cout<<mn<<endl;
       return 0;
 }
