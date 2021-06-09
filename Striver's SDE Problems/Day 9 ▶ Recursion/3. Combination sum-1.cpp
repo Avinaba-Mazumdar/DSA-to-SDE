@@ -19,7 +19,6 @@ void combList(int ind, vector<vector<int>> &vv, vector<int> &v, vector<int> A, i
 int main(){
       int n, target; cin>>n>>target;
       vector<int> a(n); for(int i=0; i<n; i++) cin>>a[i];
-      
       vector<vector<int>> vv;
       vector<int> v;
       combList(0, vv, v, a, target);
