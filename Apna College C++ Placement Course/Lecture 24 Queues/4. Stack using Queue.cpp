@@ -41,6 +41,6 @@ int main(){
       st.push(3);
       st.push(4);
       cout<<st.top()<<endl;
-
+      
       return 0;
 }
