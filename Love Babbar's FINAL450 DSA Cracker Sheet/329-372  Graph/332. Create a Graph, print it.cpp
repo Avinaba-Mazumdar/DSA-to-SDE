@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Undirected Unweighted Graph
+
 int main(){
       int n,e; cin>>n>>e;
       vector<int> adj[n+1];
