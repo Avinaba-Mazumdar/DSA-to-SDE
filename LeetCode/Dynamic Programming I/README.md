@@ -1,5 +1,4 @@
 ## Dynamc Programming I
-<br><br>
 
 D1 - https://leetcode.com/problems/fibonacci-number/ <br>
 D1 - https://leetcode.com/problems/n-th-tribonacci-number/ <br>
