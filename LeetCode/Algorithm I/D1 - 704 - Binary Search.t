@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int search(vector<int> &nums, int target) {
@@ -17,15 +14,6 @@ class Solution {
           return -1;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums = {-1,0,3,5,9,12};
-     int target = 2;
-     cout<<obj.search(nums, target);
-
-     return 0;
-}
 
 //TC: O(logN)
 //SC: O(1)

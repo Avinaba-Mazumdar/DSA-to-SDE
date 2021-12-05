@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int searchInsert(vector<int> &nums, int target) {
@@ -17,15 +14,6 @@ class Solution {
           return left;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums = {1,3,5,6};
-     int target = 0;
-     cout<<obj.searchInsert(nums, target);
-
-     return 0;
-}
 
 //TC: O(logN)
 //SC: O(1)

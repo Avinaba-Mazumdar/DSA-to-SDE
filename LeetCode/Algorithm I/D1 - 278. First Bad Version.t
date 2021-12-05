@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int firstBadVersion(int n) {
@@ -16,22 +13,6 @@ class Solution {
           return right;
      }
 };
-
-int bad;
-
-bool isBadVersion(int version){
-     if(version >= bad) return true;
-     return false;
-}
-
-int main(){
-     Solution obj;
-     int n=5;
-     bad=4;
-     cout<<obj.firstBadVersion(n);
-
-     return 0;
-}
 
 //TC: O(logN)
 //SC: O(1)
