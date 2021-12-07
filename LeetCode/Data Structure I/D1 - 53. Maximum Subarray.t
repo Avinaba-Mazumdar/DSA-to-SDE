@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int maxSubArray(vector<int> &nums) {
@@ -16,14 +13,6 @@ class Solution {
           return maxSum;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
-     cout<<obj.maxSubArray(nums);
-
-     return 0;
-}
 
 //TC: O(N)
 // SC: O(1)

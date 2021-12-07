@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      bool containsDuplicate(vector<int> &nums) {
@@ -15,14 +12,6 @@ class Solution {
           return false;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums = {1,1,1,3,3,4,3,2,4,2};
-     cout<<obj.containsDuplicate(nums);
-
-     return 0;
-}
 
 //TC: O(N)
 // SC: O(N)

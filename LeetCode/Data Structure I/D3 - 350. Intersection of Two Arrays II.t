@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      vector<int> intersect(vector<int> &nums1, vector<int> &nums2) {
@@ -18,16 +15,6 @@ class Solution {
           return ans;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums1={4,9,5}, nums2={9,4,9,8,4};
-     
-     vector<int> ans = obj.intersect(nums1, nums2);
-     for(int i : ans) cout<<i<<" ";
-
-     return 0;
-}
 
 //TC: O(N+M)
 // SC: O(N)

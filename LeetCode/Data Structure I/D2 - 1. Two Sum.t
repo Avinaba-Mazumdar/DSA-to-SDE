@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      vector<int> twoSum(vector<int> &nums, int target) {
@@ -20,18 +17,6 @@ class Solution {
           return ans;
      }
 };
-
-int main(){
-     Solution obj;
-     vector<int> nums = {3,2,4};
-     int target = 6;
-
-     vector<int> ans = obj.twoSum(nums, target);
-     for(int i=0; i<ans.size(); i++)
-          cout<<ans[i];
-
-     return 0;
-}
 
 //TC:  O(N)
 // SC:  O(N)

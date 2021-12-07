@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      vector<vector<int>> generate(int numRows) {
@@ -18,19 +15,6 @@ class Solution {
           return ans;
      }
 };
-
-int main(){
-     Solution obj;
-     int numRows = 5;
-     
-     vector<vector<int>> ans = obj.generate(numRows);
-     for(vector<int> it : ans){
-          for(int i : it) cout<<i;
-          cout<<"\n";
-     }
-
-     return 0;
-}
 
 //TC: O(N^2)
 // SC: O(N^2)
