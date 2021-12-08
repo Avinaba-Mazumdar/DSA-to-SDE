@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int climbStairs(int n) {
@@ -17,12 +14,5 @@ class Solution {
      }
 };
 
-int main(){
-     Solution obj;
-     cout<<obj.climbStairs(3)<<"\n";
-     
-     return 0;
-}
-
-//TC: O(n)
+//TC: O(N)
 //SC: O(1)

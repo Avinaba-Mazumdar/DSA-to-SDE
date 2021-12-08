@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int minCostClimbingStairs(vector<int> &cost) {
@@ -19,13 +16,5 @@ class Solution {
      }
 };
 
-int main(){
-     Solution obj;
-     vector<int> cost = {10, 15, 20};
-     cout<<obj.minCostClimbingStairs(cost);
-     
-     return 0;
-}
-
-//TC: O(n)
+//TC: O(N)
 //SC: O(n)

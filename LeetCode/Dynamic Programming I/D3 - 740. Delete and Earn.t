@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int deleteAndEarn(vector<int> &nums) {
@@ -16,13 +13,5 @@ class Solution {
      }
 };
 
-int main(){
-     Solution obj;
-     vector<int> nums = {2,2,3,3,3,4};
-     cout<<obj.deleteAndEarn(nums);
-     
-     return 0;
-}
-
-//TC: O(n)
-//SC: O(n)
+//TC: O(N)
+//SC: O(N)

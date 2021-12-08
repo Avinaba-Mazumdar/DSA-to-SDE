@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int rob(vector<int> &nums) {
@@ -20,13 +17,5 @@ class Solution {
      }
 };
 
-int main(){
-     Solution obj;
-     vector<int> nums = {2,7,9,3,1};
-     cout<<obj.rob(nums);
-     
-     return 0;
-}
-
-//TC: O(n)
+//TC: O(N)
 //SC: O(n)

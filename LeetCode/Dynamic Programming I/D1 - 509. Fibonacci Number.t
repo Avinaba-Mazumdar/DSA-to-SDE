@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
      public:
      int fib(int n) {
@@ -9,12 +6,5 @@ class Solution {
      }
 };
 
-int main(){
-     Solution obj;
-     cout<<obj.fib(4)<<endl;
-     
-     return 0;
-}
-
-//TC: O(n)
+//TC: O(N)
 //SC: O(1)
