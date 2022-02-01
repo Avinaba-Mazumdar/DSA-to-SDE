@@ -17,5 +17,5 @@ class Solution {
      }
 };
 
-//TC: O(N)
-//SC: O(n)
+TC: O(N)
+SC: O(N)
