@@ -1,0 +1,27 @@
+class Solution {
+     public:int numIslands(vector<vector<char>>&grid) {
+         int rows=grid.size(), cols=grid[0].size();
+         int ans = 0;
+         
+         for(int i=0; i<rows; i++) for(int j=0; j<cols; j++){
+             if(grid[i][j]=='1'){
+                 ans++;
+                 turnOne(grid, i, j);
+             }
+         }
+         
+         return ans;
+     }
+     
+     private:void turnOne(vector<vector<char>>&grid, int i, int j){
+         if(i<0 or j<0 or i>=grid.size() or j>=grid[0].size() or grid[i][j]!='1') return;
+         
+         grid[i][j] = '!';
+         
+         turnOne(grid, i+1, j);
+         turnOne(grid, i-1, j);
+         turnOne(grid, i, j-1);
+         turnOne(grid, i, j+1);
+         return;
+     }
+ };
