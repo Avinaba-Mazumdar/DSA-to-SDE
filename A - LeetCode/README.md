@@ -1,3 +1,3 @@
-# DSA to SDE
+## LeetCode
 
-DSA and Interview Questions from various Sources solved in C++
+Here you'll find solutions to LeetCode's `Study Plan` problems.
