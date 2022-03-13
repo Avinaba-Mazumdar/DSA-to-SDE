@@ -1,0 +1,37 @@
+class Solution {
+     public:int shortestPathBinaryMatrix(vector<vector<int>>&grid){
+          if(grid[0][0]) return -1;
+          int n = grid.size();
+          if(n==1)return 1;
+          int ans = 1;
+          
+          int dx[8] = {-1,-1,-1, 0, 0, 1, 1, 1};
+          int dy[9] = {-1, 0, 1,-1, 1,-1, 0, 1};
+          
+          queue<pair<int,int>> Q; Q.push({0,0});
+          grid[0][0] = 1;
+          while(!Q.empty()){
+               int size = Q.size();
+               ans++;
+               while(size--){
+                    int cx = Q.front().first;
+                    int cy = Q.front().second;
+                    Q.pop();
+                    
+                    for(int i=0; i<8; i++){
+                         int nx = dx[i] + cx;
+                         int ny = dy[i] + cy;
+                         if(nx==n-1 and ny==n-1 and grid[nx][ny]==0) return ans;
+                         
+                         if(nx>=0 and ny>=0 and nx<n and ny<n and grid[nx][ny]==0){
+                         Q.push({nx,ny});
+                         grid[nx][ny] = 1;
+                         }
+                         
+                    }
+               }
+          }
+          
+          return -1;
+     }
+};

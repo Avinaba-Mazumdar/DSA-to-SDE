@@ -1,0 +1,39 @@
+class Solution {
+     public:vector<vector<int>> pacificAtlantic(vector<vector<int>>&hgt){
+          vector<vector<int>> ans;
+          
+          int rows=hgt.size(), cols=hgt[0].size();
+          
+          vector<vector<bool>> pacific(rows, vector<bool>(cols, false));
+          vector<vector<bool>> atlantic(rows, vector<bool>(cols, false));
+          
+          for(int i=0; i<rows; i++){
+               dfs(hgt, pacific, i, 0); //first column
+               dfs(hgt, atlantic, i, cols-1); //last column
+          }
+          
+          for(int i=0; i<cols; i++){
+               dfs(hgt, pacific, 0, i); //first row
+               dfs(hgt, atlantic, rows-1, i); //last row
+          }
+          
+          for(int i=0; i<rows; i++) for(int j=0; j<cols; j++){
+               if(pacific[i][j] and atlantic[i][j])
+                    ans.push_back({i,j});
+          }
+          
+          return ans;
+     }
+     
+     private:void dfs(vector<vector<int>>&hgt, vector<vector<bool>>&vis, int i, int j){
+          if(vis[i][j]) return;
+          
+          vis[i][j] = true;
+          int rows=hgt.size(), cols=hgt[0].size();
+          
+          if(i+1<rows and hgt[i+1][j]>=hgt[i][j]) dfs(hgt, vis, i+1, j);
+          if(i-1>-1   and hgt[i-1][j]>=hgt[i][j]) dfs(hgt, vis, i-1, j);
+          if(j+1<cols and hgt[i][j+1]>=hgt[i][j]) dfs(hgt, vis, i, j+1);
+          if(j-1>-1   and hgt[i][j-1]>=hgt[i][j]) dfs(hgt, vis, i, j-1);
+     }
+};
