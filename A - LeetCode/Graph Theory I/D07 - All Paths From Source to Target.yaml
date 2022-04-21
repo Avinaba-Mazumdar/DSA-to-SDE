@@ -1,6 +1,7 @@
 #define vvi vector<vector<int>>
 class Solution{
-     public:vvi allPathsSourceTarget(vvi &G){
+     public:
+     vvi allPathsSourceTarget(vvi &G){
           vvi ans;
           vector<int> temp;
           
@@ -8,7 +9,8 @@ class Solution{
           return ans;
      }
      
-     private:void dfs(vvi &G, vvi &ans, vector<int> temp, int idx){
+     private:
+     void dfs(vvi &G, vvi &ans, vector<int> temp, int idx){
           temp.push_back(idx);
           
           if(idx == G.size()-1){

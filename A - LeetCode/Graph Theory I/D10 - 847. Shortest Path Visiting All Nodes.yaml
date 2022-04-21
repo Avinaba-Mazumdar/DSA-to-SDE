@@ -1,0 +1,33 @@
+class Solution {
+     public:
+     int shortestPathLength(vector<vector<int>> &graph){
+          if(graph.size()==1) return 0;
+          int n=graph.size(), final_state=(1<<n)-1;
+          int ans = 0;
+          
+          queue<vector<int>> Q;
+          vector<vector<bool>> visited(n, vector<bool>(final_state,false));
+          for(int i=0; i<n; i++) Q.push({i, (1<<i)});
+          
+          while(!Q.empty()){
+               ans++;
+               int size = Q.size();
+               while(size--){
+                    int node_id = Q.front()[0];
+                    int vis_bit = Q.front()[1];
+                    Q.pop();
+                    
+                    for(auto &i : graph[node_id]){
+                         int new_vis_bit = vis_bit | (1<<i);
+                         if(new_vis_bit == final_state) return ans;
+                         if(visited[i][new_vis_bit]) continue;
+                         
+                         visited[i][new_vis_bit] = true;
+                         Q.push({i, new_vis_bit});
+                    }
+               }
+          }
+          
+          return -1;
+     }
+};

@@ -1,5 +1,6 @@
 class Solution {
-     public:int maxDistance(vector<vector<int>>&grid) {
+     public:
+     int maxDistance(vector<vector<int>>&grid) {
           int dx[4]={0,1,0,-1}, dy[4]={1,0,-1,0};
           int n = grid.size();
           int ans = -1;

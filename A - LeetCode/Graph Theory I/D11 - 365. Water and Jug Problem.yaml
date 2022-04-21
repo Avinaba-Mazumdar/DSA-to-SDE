@@ -1,0 +1,72 @@
+class Solution {
+     public:
+     bool canMeasureWater(int jug1, int jug2, int trgCap) {
+          if(trgCap  >  jug1 + jug2) return false;
+          
+          queue<pair<int,int>> Q;
+          set<pair<int,int>> set;
+          
+          Q.push({jug1, jug2});
+          set.insert({jug1, jug2});
+          
+          while(!Q.empty()){
+               int x = Q.front().first;
+               int y = Q.front().second;
+               Q.pop();
+               
+               if(x+y == trgCap) return true;
+               
+               int X,Y;
+               
+               //1 fill jug2 with jug1
+               X = x - min(x, jug2-y);
+               Y = y + min(x, jug2-y);
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+               
+               //2 fill jug1 with jug2
+               X = x + min(y, jug1-x);
+               Y = y - min(y, jug1-x);
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+               
+               //3 fill jug1
+               X = jug1;
+               Y = y;
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+               
+               //4 fill jug2
+               X = x;
+               Y = jug2;
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+               
+               //5 empty jug1
+               X = 0;
+               Y = y;
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+               
+               //6 empty jug2
+               X = x;
+               Y = 0;
+               if(!set.count({X,Y})){
+                    set.insert({X,Y});
+                    Q.push({X,Y});
+               }
+          }
+          
+          return false;
+     }
+};

@@ -1,5 +1,6 @@
 class Solution {
-     public:int shortestBridge(vector<vector<int>>&grid) {
+     public:
+     int shortestBridge(vector<vector<int>>&grid) {
           int n = grid.size();
           int cnt = 0;
           vector<pair<int,int>> X;
@@ -27,7 +28,8 @@ class Solution {
           return ans;
      }
      
-     private:void dfs(vector<vector<int>>&grid, int i, int j, vector<pair<int,int>>&V){
+     private:
+     void dfs(vector<vector<int>>&grid, int i, int j, vector<pair<int,int>>&V){
           int n = grid.size();
           if(i<0 or j<0 or i>=n or j>=n or !grid[i][j]) return;
           

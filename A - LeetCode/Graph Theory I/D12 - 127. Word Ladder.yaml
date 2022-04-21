@@ -1,0 +1,42 @@
+class Solution {
+     public:
+     int ladderLength(string bWord, string eWord, vector<string>&wList) {
+          unordered_set<string> set;
+          bool isPresent = false;
+          for(string word : wList){
+               if(eWord.compare(word) == 0) isPresent = true;
+               set.insert(word);
+          }
+          if(isPresent == false) return 0;
+          
+          int ans = 0;
+          queue<string> Q;
+          Q.push(bWord);
+          
+          while(!Q.empty()){
+               ans++;
+               int n = Q.size();
+               
+               while(n--){
+                    string curr = Q.front();
+                    Q.pop();
+                    
+                    for(int i=0; i<curr.size(); i++){
+                         string temp = curr;
+                         for(char c='a'; c<='z'; c++){
+                         temp[i] = c;
+                         
+                         if(curr.compare(temp) == 0) continue;
+                         if(temp.compare(eWord) == 0) return ans+1;
+                         if(set.find(temp) != set.end()){
+                              Q.push(temp);
+                              set.erase(temp);
+                         }
+                         }
+                    }
+               }
+          }
+          
+          return 0;
+     }
+};

@@ -1,5 +1,6 @@
 class Solution {
-     public:vector<vector<int>> updateMatrix(vector<vector<int>> &mat){
+     public:
+     vector<vector<int>> updateMatrix(vector<vector<int>> &mat){
           int m=mat.size(), n=mat[0].size();
           vector<vector<int>> ans(m, vector<int>(n,-1));
           queue<pair<int,int>> Q;

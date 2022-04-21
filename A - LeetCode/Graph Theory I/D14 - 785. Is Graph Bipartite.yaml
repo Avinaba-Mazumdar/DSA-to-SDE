@@ -1,0 +1,32 @@
+class Solution {
+     public:
+     bool isBipartite(vector<vector<int>> &G) {
+          int n = G.size();
+          vector<int> colors(n,0);
+          queue<int> Q;
+          
+          for(int i=0; i<n; i++){
+               if(colors[i]) continue;
+               
+               colors[i] = 1;
+               Q.push(i);
+               
+               while(!Q.empty()){
+                    int temp = Q.front();
+                    
+                    for(int &it : G[temp]){
+                         if(!colors[it]){
+                         colors[it] = -colors[temp];
+                         Q.push(it);
+                         }
+                         else if(colors[it] == colors[temp])
+                         return false;
+                    }
+                    
+                    Q.pop();
+               }
+          }
+          
+          return true;
+     }
+};

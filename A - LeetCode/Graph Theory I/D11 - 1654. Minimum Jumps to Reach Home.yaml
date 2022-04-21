@@ -1,0 +1,40 @@
+class Solution {
+     public:
+     int minimumJumps(vector<int> &forbid, int a, int b, int x) {
+          if(x == 0) return 0;
+          unordered_set<int> set{forbid.begin(), forbid.end()};
+          if(set.count(0)) return -1;
+          
+          int ans = 0;
+          queue<pair<int,int>> Q;
+          Q.push({0,0});
+          set.insert(0);
+          
+          while(!Q.empty()){
+               int size = Q.size();
+               while(size--){
+                    int curr = Q.front().first;
+                    int prev = Q.front().second;
+                    Q.pop();
+                    
+                    if(curr == x) return ans;
+                    
+                    int forward  = curr+a;
+                    int backward = curr-b;
+                    
+                    if(!prev and backward>=0 and !set.count(backward)){
+                         set.insert(backward);
+                         Q.push({backward, 1});
+                    }
+                    
+                    if(forward<6000 and !set.count(forward)){
+                         set.insert(forward);
+                         Q.push({forward, 0});
+                    }
+               }
+               ans++;
+          }
+          
+          return -1;
+     }
+};

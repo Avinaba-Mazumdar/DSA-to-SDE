@@ -1,5 +1,6 @@
 class Solution {
-     public:int shortestPathBinaryMatrix(vector<vector<int>>&grid){
+     public:
+     int shortestPathBinaryMatrix(vector<vector<int>>&grid){
           if(grid[0][0]) return -1;
           int n = grid.size();
           if(n==1)return 1;

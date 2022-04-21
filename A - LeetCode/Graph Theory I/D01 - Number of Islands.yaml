@@ -1,5 +1,6 @@
 class Solution {
-     public:int numIslands(vector<vector<char>>&grid) {
+     public:
+     int numIslands(vector<vector<char>>&grid) {
          int rows=grid.size(), cols=grid[0].size();
          int ans = 0;
          
@@ -13,7 +14,8 @@ class Solution {
          return ans;
      }
      
-     private:void turnOne(vector<vector<char>>&grid, int i, int j){
+     private:
+     void turnOne(vector<vector<char>>&grid, int i, int j){
          if(i<0 or j<0 or i>=grid.size() or j>=grid[0].size() or grid[i][j]!='1') return;
          
          grid[i][j] = '!';

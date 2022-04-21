@@ -1,0 +1,27 @@
+class Solution {
+     public:
+     int findCircleNum(vector<vector<int>>&isCon) {
+          int n = isCon.size();
+          vector<bool> vis(n+1, false);
+          int ans = 0;
+          
+          for(int i=0; i<n; i++){
+               if(not vis[i]){
+                    dfs(isCon, vis, i);
+                    ans++;
+               }
+          }
+          
+          return ans;
+     }
+     
+     private:
+     void dfs(vector<vector<int>>&isCon, vector<bool>&vis, int idx){
+          for(int i=0; i<isCon.size(); i++){
+               if(isCon[idx][i]==1 and !vis[i]){
+                    vis[i] = true;
+                    dfs(isCon, vis, i);
+               }
+          }
+     }
+};
