@@ -1,3 +1,5 @@
+# solve it with GCD
+
 class Solution {
      public:
      bool canMeasureWater(int jug1, int jug2, int trgCap) {

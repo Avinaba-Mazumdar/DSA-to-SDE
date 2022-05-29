@@ -33,10 +33,10 @@ class Solution {
                     }
                     else{
                          for(auto x:bAdj[node]){
-                         if(res[x].first > 1+currDist){
-                              q.push({x,1});
-                              res[x].first = 1+currDist;
-                         }
+                            if(res[x].first > 1+currDist){
+                                q.push({x,1});
+                                res[x].first = 1+currDist;
+                            }
                          }
                     }
                }

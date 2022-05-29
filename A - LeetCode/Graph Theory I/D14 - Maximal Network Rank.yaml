@@ -1,0 +1,25 @@
+class Solution {
+    public:
+    int maximalNetworkRank(int n, vector<vector<int>> &roads) {
+        vector<unordered_set<int>> G(n);
+        int ans = 0;
+        
+        for(vector<int> &road : roads){
+            G[road[0]].insert(road[1]);
+            G[road[1]].insert(road[0]);
+        }
+        
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                int network_rank = G[i].size() + G[j].size();
+                if(G[j].count(i)){
+                    network_rank--;
+                }
+                
+                ans = max(ans, network_rank);
+            }
+        }
+        
+        return ans;
+    }
+};
