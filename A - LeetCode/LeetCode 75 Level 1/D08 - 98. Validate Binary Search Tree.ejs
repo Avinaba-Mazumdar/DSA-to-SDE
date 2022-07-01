@@ -1,0 +1,10 @@
+class Solution {
+    public:
+    bool isValidBST(TreeNode* root, long lower=LONG_MIN, long upper=LONG_MAX) {
+        if(!root) return true;
+        if(root->val >= upper or root->val <= lower) return false;
+        
+        return isValidBST(root->left, lower, root->val) 
+            and isValidBST(root->right, root->val, upper);
+    }
+};

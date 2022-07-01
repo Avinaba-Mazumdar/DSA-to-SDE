@@ -1,0 +1,30 @@
+class Solution {
+    public:
+    vector<int> findAnagrams(string s, string p) {
+        vector<int> shash(26,0), phash(26,0);
+        vector<int> ans;
+        int n=s.size(), window=p.size();
+        if(n < window) return ans;
+        int left=0, right=0;
+        
+        while(right < window){
+            shash[s[right]-'a']++;
+            phash[p[right]-'a']++;
+            right++;
+        }
+        right--;
+        
+        while(right < n){
+            if(shash == phash) ans.push_back(left);
+            right++;
+            
+            if(right != n){
+                shash[s[right]-'a']++;
+                shash[s[left]-'a']--;
+            }
+            left++;
+        }
+        
+        return ans;
+    }
+};
